@@ -49,9 +49,9 @@ onMounted(()=>{
 })
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 #project-card{
-    height: 50vh;
+    height: 450px;
     h4{
         text-align: center;
         padding-bottom: 8px;
