@@ -25,6 +25,25 @@ export const store = reactive({
                 this.$router.push({name: 'not-found'});
             }
         })
-    }
-        
+    },
+    sendForm(formData){
+        formData.loading = true;
+        const data = {
+            name: formData.name,
+            email: formData.email,
+            message: formData.message
+        }
+
+        axios.post(`${this.apiBaseUrl}/contacts`, data).then((response)=>{
+            formData.success = response.data.success;
+            if(!formData.success){
+                formData.errors = response.data.errors;
+            } else {
+                formData.name = '';
+                formData.email = '';
+                formData.message = '';
+            }
+            formData.loading = false;
+        });
+    }    
 });

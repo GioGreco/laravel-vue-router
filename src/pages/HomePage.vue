@@ -8,6 +8,9 @@
             <li>
                 <RouterLink to="/not-found">404</RouterLink>
             </li>
+            <li>
+                <RouterLink to="/contacts">Contact Us</RouterLink>
+            </li>
         </ul>
     </div>
 </template>

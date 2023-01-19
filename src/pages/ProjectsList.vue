@@ -22,7 +22,6 @@ import {store} from '@/stores/store.js';
 import { ref, onMounted } from 'vue';
 import ProjectCardComponent from '@/components/ProjectCardComponent.vue';
 
-// @click="store.getProjects(n)"
 //current view page
 const currentPage = ref(1);
 

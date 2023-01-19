@@ -3,6 +3,8 @@ import HomePage from '@/pages/HomePage.vue';
 import ProjectsList from '@/pages/ProjectsList.vue';
 import NotFound from '@/pages/NotFound.vue';
 import SingleProject from '@/pages/SingleProject.vue';
+import ContactUs from '@/pages/ContactUs.vue';
+
 
 const routes = [
     {
@@ -24,6 +26,11 @@ const routes = [
         path: '/not-found',
         name: 'not-found',
         component: NotFound
+    },
+    {
+        path: '/contacts',
+        name: 'contacts',
+        component: ContactUs
     }
 ]
 
