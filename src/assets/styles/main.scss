@@ -5,6 +5,13 @@ $fa-font-path: '../webfonts';
 
 //general
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cinzel', serif;
+}
+
 body{
     background-color: beige;
 }

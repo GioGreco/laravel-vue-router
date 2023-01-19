@@ -1,4 +1,5 @@
 <template>
+    <NavbarComponent/>
     <section class="container">
         <h1 class="text-center">Contattami!</h1>
         <div class="row">
@@ -9,4 +10,5 @@
 
 <script setup>
 import ContactFormComponent from '@/components/ContactFormComponent.vue';
+import NavbarComponent from '../components/NavbarComponent.vue';
 </script>
