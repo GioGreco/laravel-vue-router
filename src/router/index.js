@@ -23,17 +23,17 @@ const routes = [
         component: SingleProject
     },
     {
-        path: '/not-found',
-        name: 'not-found',
-        component: NotFound
-    },
-    {
         path: '/contacts',
         name: 'contacts',
         component: ContactUs
+    },
+    {
+        path: '/not-found',
+        name: 'not-found',
+        component: NotFound
     }
 ]
-
+// path: "/:pathMatch(.*)*",
 const router = createRouter({
     history: createWebHistory(),
     routes

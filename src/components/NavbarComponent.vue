@@ -1,13 +1,22 @@
 <template>
     <nav class="container ">
         <ul class="d-flex justify-content-center align-items-center p-0 m-0">
-            <li class="mx-5" v-for="(navItem, index) in navItems" :key="index">
+            <li class="mx-5" v-for="(navItem, index) in navItems" :key="index" @click="handleShowTitle">
                 <RouterLink active-class="is-active" class="navLink" :to="navItem.path">{{ navItem.name }}</RouterLink>
             </li>
         </ul>
     </nav>
 </template>
 <script setup>
+
+const emit = defineEmits(['hideTitle']);
+// const handleShowTitle = () => {
+//     emit('showTitle')
+// }
+
+
+
+//nav items
 const navItems = [
     {
         name: 'Home',
@@ -43,35 +52,35 @@ nav{
 
             &::before, &::after {
                 position: absolute;
-                background: beige;
+                background-color: beige;
                 z-index: -1;
                 transition: .8s;
                 content: '';
             }
 
             &::before {
-                height: 105%;
+                height: 108%;
                 width: 70%;
             }
 
             &::after {
-                width: 105%;
+                width: 108%;
                 height: 70%;
             }
 
 
             &:hover::before {
                 width: 0px;
-                background: #fff;
+                background-color: #fff;
             }
 
             &:hover::after {
                 height: 0px;
-                background: #fff;
+                background-color: #fff;
             }
 
             &:hover {
-                background: #fff;
+                background-color: #fff;
             }
 
             .navLink{

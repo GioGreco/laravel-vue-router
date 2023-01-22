@@ -1,11 +1,13 @@
 <template>
     <div class="vh-100 position-relative">
-        <h1>/GioGreco.dev</h1>
-        <Transition name="fadeEnter">
-            <div class="wrapItems" v-if="show">
-                <NavbarComponent/>
-            </div>
-        </Transition>
+        <div class="box">
+            <h1 v-if="showTitle">/GioGreco.dev</h1>
+            <Transition name="fadeEnter">
+                <div class="wrapItems" v-if="show">
+                    <NavbarComponent @hideTitle="showTitle = false"/>
+                </div>
+            </Transition>
+        </div>
     </div>
 </template>
 
@@ -14,13 +16,16 @@
 import NavbarComponent from '@/components/NavbarComponent.vue';
 import { ref,onMounted } from 'vue';
 
+//show nav delay
 const show = ref(false)
-
 onMounted(()=>{
     setTimeout(()=>{
         show.value = true;
     }, 3500)
 })
+
+//routes transitions parameters
+const showTitle = ref(true);
 </script>
 
 <style lang="scss" scoped>
@@ -54,6 +59,36 @@ h1{
     transform: translate(-50%, 0);
 }
 
+.box{
+    width: 100%;
+    height: 90%;
+    border: 3px solid black;
+    position: absolute;
+    top: 50%;
+    transform: translate(0 , -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+
+    &::before, &::after {
+                position: absolute;
+                background-color: beige;
+                z-index: -1;
+                transition: .8s;
+                content: '';
+            }
+
+            &::before {
+                height: 105%;
+                width: 70%;
+            }
+
+            &::after {
+                width: 105%;
+                height: 70%;
+            }
+}
 
 //ANIMATIONS
 
